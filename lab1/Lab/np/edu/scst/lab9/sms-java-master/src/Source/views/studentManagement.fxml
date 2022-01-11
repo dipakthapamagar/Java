@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="689.0" prefWidth="709.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Source.controllers.studentManagementController">
+   <children>
+      <Pane layoutY="-6.0" prefHeight="61.0" prefWidth="728.0" style="-fx-background-color: #4169E1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="8.0" layoutY="26.0" prefHeight="30.0" prefWidth="343.0" text="Student Management" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutY="200.0" prefHeight="1.0" prefWidth="672.0" style="-fx-background-color: #EEEEEE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+      <HBox layoutY="68.0" prefHeight="100.0" prefWidth="200.0" spacing="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
+         <children>
+            <Separator prefHeight="0.0" prefWidth="0.0" visible="false" HBox.hgrow="ALWAYS" />
+            <Pane prefHeight="93.0" prefWidth="177.0" style="-fx-background-color: #F44336; -fx-background-radius: 5;">
+               <children>
+                  <Label fx:id="regularNumberLabel" alignment="CENTER_RIGHT" layoutX="86.0" layoutY="10.0" prefHeight="50.0" prefWidth="84.0" text="00" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="10.0" layoutY="67.0" size="63" />
+                  <Label alignment="CENTER_RIGHT" layoutX="65.0" layoutY="63.0" prefHeight="30.0" prefWidth="108.0" text="Regular Students" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="93.0" prefWidth="177.0" style="-fx-background-color: #9C27B0; -fx-background-radius: 5;">
+               <children>
+                  <Label fx:id="remedialNumberLabel" alignment="CENTER_RIGHT" layoutX="86.0" layoutY="10.0" prefHeight="50.0" prefWidth="84.0" text="00" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="50.0" fitWidth="47.0" layoutX="10.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/employee.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="69.0" text="Remedial Students" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="93.0" prefWidth="177.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 5;">
+               <children>
+                  <Label fx:id="clubNumberLabel" alignment="CENTER_RIGHT" layoutX="77.0" layoutY="10.0" prefHeight="50.0" prefWidth="93.0" text="00" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="WHITE" glyphName="STREET_VIEW" layoutX="7.0" layoutY="64.0" size="60" />
+                  <Label alignment="CENTER_RIGHT" layoutX="59.0" layoutY="69.0" prefHeight="20.0" prefWidth="115.0" text="Students In Clubs" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Separator layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutY="208.0" prefHeight="24.0" prefWidth="709.0" text="Menu" textFill="GREY" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <VBox layoutX="108.0" layoutY="245.0" prefHeight="350.0" prefWidth="507.0" spacing="20.0" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="245.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton contentDisplay="TOP" onAction="#onRegularEnrollment" prefHeight="99.0" prefWidth="129.0" ripplerFill="#add2ff" text="Regular Enrollment" textAlignment="CENTER" wrapText="true">
+                     <graphic>
+                        <FontAwesomeIconView fill="ROYALBLUE" fontSmoothingType="LCD" glyphName="USER" size="50" />
+                     </graphic></JFXButton>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton contentDisplay="TOP" layoutX="10.0" layoutY="10.0" onAction="#onRemedialEnrollment" prefHeight="99.0" prefWidth="129.0" ripplerFill="#add2ff" text="Remedial Enrollment" textAlignment="CENTER" wrapText="true">
+                     <graphic>
+                        <FontAwesomeIconView fill="ROYALBLUE" fontSmoothingType="LCD" glyphName="BOOK" size="50" />
+                     </graphic></JFXButton>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton contentDisplay="TOP" layoutX="159.0" layoutY="10.0" onAction="#onClubManagement" prefHeight="99.0" prefWidth="129.0" ripplerFill="#add2ff" text="Club Management">
+                     <graphic>
+                        <FontAwesomeIconView fill="ROYALBLUE" glyphName="STREET_VIEW" size="50.0" />
+                     </graphic></JFXButton>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton contentDisplay="TOP" onAction="#onClassroomManagement" prefHeight="99.0" prefWidth="129.0" ripplerFill="#add2ff" text="Classroom Management" textAlignment="CENTER" wrapText="true">
+                     <graphic>
+                        <MaterialDesignIconView fill="ROYALBLUE" glyphName="LIBRARY" size="50.0" />
+                     </graphic>
+                  </JFXButton>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="99.0" prefWidth="129.0" ripplerFill="#add2ff" text="SMS / EMAIL" textAlignment="CENTER" wrapText="true">
+                     <graphic>
+                        <MaterialDesignIconView fill="ROYALBLUE" glyphName="EMAIL" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton contentDisplay="TOP" layoutX="159.0" layoutY="10.0" onAction="#onAttendance" prefHeight="99.0" prefWidth="129.0" ripplerFill="#add2ff" text="Attendance">
+                     <graphic>
+                        <MaterialDesignIconView fill="ROYALBLUE" glyphName="FILE_CHART" size="50.0" />
+                     </graphic>
+                  </JFXButton>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="130.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton contentDisplay="TOP" layoutX="10.0" layoutY="10.0" prefHeight="99.0" prefWidth="129.0" ripplerFill="#add2ff" text="Clinic" textAlignment="CENTER" wrapText="true">
+                     <graphic>
+                        <FontAwesomeIconView fill="ROYALBLUE" fontSmoothingType="LCD" glyphName="HOSPITAL_ALT" size="50" />
+                     </graphic>
+                  </JFXButton>
+                  <Separator prefWidth="10.0" visible="false" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

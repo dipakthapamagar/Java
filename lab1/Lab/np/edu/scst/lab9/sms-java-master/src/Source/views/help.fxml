@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="162.0" prefWidth="314.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="74.0" layoutY="6.0" text="For any help or support contact us:" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="92.0" />
+      <Label layoutX="115.0" layoutY="60.0" prefHeight="17.0" prefWidth="104.0" text="+233 553 567 136" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="132.0" />
+      <Label layoutX="118.0" layoutY="117.0" prefHeight="17.0" prefWidth="128.0" text="mjadarko@gmail.com" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="105.0" />
+      <Label layoutX="115.0" layoutY="87.0" prefHeight="17.0" prefWidth="104.0" text="+233 553 567 136" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="132.0" />
+      <FontAwesomeIconView fill="#1399f2" glyphName="PHONE" layoutX="68.0" layoutY="77.0" size="20.0" />
+      <FontAwesomeIconView fill="#0a940e" glyphName="WHATSAPP" layoutX="68.0" layoutY="103.0" size="20.0" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="271.0" />
+      <FontAwesomeIconView fill="#ee6767" glyphName="ENVELOPE_ALT" layoutX="68.0" layoutY="131.0" size="20.0" />
+      <Label layoutX="124.0" layoutY="31.0" prefHeight="17.0" prefWidth="70.0" text="Pi Universal" />
+      <ImageView fitHeight="48.0" fitWidth="58.0" layoutX="280.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/pi.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

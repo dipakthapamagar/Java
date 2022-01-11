@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckListView?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="709.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Source.controllers.clubManagementController">
+   <children>
+      <StackPane fx:id="stackPane" layoutY="65.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Enroll Students In Club">
+                     <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                           <children>
+                              <Separator prefHeight="3.0" prefWidth="61.0" visible="false" />
+                              <VBox prefHeight="606.0" prefWidth="257.0" spacing="5.0">
+                                 <children>
+                                    <JFXComboBox fx:id="classroomsJFXComboBox" labelFloat="true" onAction="#onClassSelected" prefHeight="25.0" prefWidth="152.0" promptText="Sort by class" />
+                                    <Label prefHeight="17.0" prefWidth="225.0" text="Students">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXListView fx:id="studentsJFXListView" onMouseClicked="#onStudentSelected" VBox.vgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <HBox HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox prefHeight="606.0" prefWidth="327.0">
+                                       <children>
+                                          <HBox prefHeight="54.0" prefWidth="265.0">
+                                             <children>
+                                                <Pane fx:id="snackBarPane" prefHeight="34.0" prefWidth="297.0" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <Label prefHeight="44.0" prefWidth="271.0" text="Clubs">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="14.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <CheckListView fx:id="clubsCheckListView" disable="true" prefHeight="353.0" prefWidth="292.0" />
+                                          <Separator orientation="VERTICAL" prefHeight="157.0" prefWidth="7.0" visible="false" />
+                                          <HBox prefHeight="83.0" prefWidth="242.0">
+                                             <children>
+                                                <Separator prefWidth="200.0" visible="false" />
+                                                <JFXButton buttonType="RAISED" onAction="#onSaveBtnClicked" prefHeight="33.0" prefWidth="113.0" style="-fx-background-color: royalblue;" text="Save" textFill="WHITE" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Separator prefHeight="0.0" prefWidth="96.0" visible="false" />
+                           </children>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                  </Tab>
+                  <Tab text="New Club">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="32.0" layoutY="14.0" prefHeight="28.0" prefWidth="119.0" text="Add New Club" underline="true" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="14.0">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="clubNameTextField" labelFloat="true" layoutX="31.0" layoutY="59.0" prefHeight="25.0" prefWidth="415.0" promptText="Club Name" AnchorPane.leftAnchor="31.0" />
+                              <Label layoutX="32.0" layoutY="116.0" text="Meeting Days and Time" underline="true" AnchorPane.leftAnchor="32.0" AnchorPane.topAnchor="116.0">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="32.0" layoutY="154.0" prefHeight="53.0" prefWidth="447.0" spacing="10.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="51.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="mondayCheck" prefHeight="29.0" prefWidth="69.0" text="Monday" />
+                                    <JFXTimePicker fx:id="monStart" defaultColor="ROYALBLUE" disable="true" promptText="Start time" />
+                                    <JFXTimePicker fx:id="monEnd" defaultColor="ROYALBLUE" disable="true" layoutX="79.0" layoutY="20.0" promptText="End time" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox layoutX="31.0" layoutY="202.0" prefHeight="53.0" prefWidth="447.0" spacing="10.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="52.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="tuesdayCheck" prefHeight="29.0" prefWidth="69.0" text="Tuesday" />
+                                    <JFXTimePicker fx:id="tuesStart" defaultColor="ROYALBLUE" disable="true" promptText="Start time" />
+                                    <JFXTimePicker fx:id="tuesEnd" defaultColor="ROYALBLUE" disable="true" layoutX="79.0" layoutY="20.0" promptText="End time" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox layoutX="32.0" layoutY="252.0" prefHeight="53.0" prefWidth="447.0" spacing="10.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="51.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="wednesdayCheck" prefHeight="29.0" prefWidth="96.0" text="Wednesday" />
+                                    <JFXTimePicker fx:id="wedStart" defaultColor="ROYALBLUE" disable="true" prefHeight="25.0" prefWidth="144.0" promptText="Start time" />
+                                    <JFXTimePicker fx:id="wedEnd" defaultColor="ROYALBLUE" disable="true" layoutX="79.0" layoutY="20.0" promptText="End time" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox layoutX="32.0" layoutY="305.0" prefHeight="53.0" prefWidth="447.0" spacing="10.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="51.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="thursdayCheck" prefHeight="29.0" prefWidth="69.0" text="Thurday" />
+                                    <JFXTimePicker fx:id="thursStart" defaultColor="ROYALBLUE" disable="true" promptText="Start time" />
+                                    <JFXTimePicker fx:id="thursEnd" defaultColor="ROYALBLUE" disable="true" layoutX="79.0" layoutY="20.0" promptText="End time" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox layoutX="32.0" layoutY="358.0" prefHeight="53.0" prefWidth="447.0" spacing="10.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="51.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="fridayCheck" prefHeight="29.0" prefWidth="69.0" text="Friday" />
+                                    <JFXTimePicker fx:id="friStart" defaultColor="ROYALBLUE" disable="true" promptText="Start time" />
+                                    <JFXTimePicker fx:id="friEnd" defaultColor="ROYALBLUE" disable="true" layoutX="79.0" layoutY="20.0" promptText="End time" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <JFXButton buttonType="RAISED" layoutX="345.0" layoutY="532.0" onAction="#onSaveNewClub" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: royalblue;" text="Save" textFill="WHITE" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="345.0" />
+                              <HBox layoutX="32.0" layoutY="413.0" prefHeight="53.0" prefWidth="447.0" spacing="10.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="51.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="saturdayCheck" prefHeight="29.0" prefWidth="69.0" text="Saturday" />
+                                    <JFXTimePicker fx:id="satStart" defaultColor="ROYALBLUE" disable="true" promptText="Start time" />
+                                    <JFXTimePicker fx:id="satEnd" defaultColor="ROYALBLUE" disable="true" layoutX="79.0" layoutY="20.0" promptText="End time" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox layoutX="33.0" layoutY="460.0" prefHeight="53.0" prefWidth="447.0" spacing="10.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="51.0">
+                                 <children>
+                                    <JFXCheckBox fx:id="sundayCheck" prefHeight="29.0" prefWidth="69.0" text="Sunday" />
+                                    <JFXTimePicker fx:id="sunStart" defaultColor="ROYALBLUE" disable="true" promptText="Start time" />
+                                    <JFXTimePicker fx:id="sunEnd" defaultColor="ROYALBLUE" disable="true" layoutX="79.0" layoutY="20.0" promptText="End time" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <Pane fx:id="newClubSnackBarPane" layoutX="446.0" layoutY="7.0" prefHeight="44.0" prefWidth="254.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="7.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                 <Tab text="Update Club Info">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <HBox layoutX="229.0" layoutY="5.0" prefHeight="48.0" prefWidth="709.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <Separator prefWidth="200.0" visible="false" HBox.hgrow="ALWAYS" />
+                                    <JFXComboBox fx:id="clubsJFXComboBox" labelFloat="true" onAction="#onClubSelected" prefHeight="37.0" prefWidth="237.0" promptText="Select Club">
+                                       <HBox.margin>
+                                          <Insets top="6.0" />
+                                       </HBox.margin>
+                                    </JFXComboBox>
+                                    <Pane fx:id="updateClubSnackBarPane" prefHeight="35.0" prefWidth="236.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <VBox fx:id="settingsContainer" layoutX="73.0" layoutY="69.0" prefHeight="461.0" prefWidth="572.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="69.0" />
+                              <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="662.0" layoutY="63.0" onAction="#onAddNewDay" prefHeight="36.0" prefWidth="39.0" text="Add" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="63.0">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="ROYALBLUE" glyphName="PLUS_SQUARE" size="30" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" layoutX="558.0" layoutY="542.0" onAction="#onSaveChanges" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: royalblue;" text="Save" textFill="WHITE" AnchorPane.bottomAnchor="39.0" AnchorPane.rightAnchor="99.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+      
+            </TabPane>
+         </children>
+      </StackPane>
+      <HBox layoutX="65.0" prefHeight="61.0" prefWidth="200.0" style="-fx-background-color: royalblue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="BOTTOM_LEFT" prefHeight="61.0" prefWidth="135.0" text="Club Management" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

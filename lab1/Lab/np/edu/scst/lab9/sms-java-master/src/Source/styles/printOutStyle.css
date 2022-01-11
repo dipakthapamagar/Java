@@ -1,0 +1,28 @@
+.jfx-combo-boxxx .arrow{
+-fx-background-color: white;
+}
+
+/*.table-cell{
+-fx-background-color: white;
+-fx-border-color: gray;
+-fx-font-size: 10px;
+
+}*/
+
+.table-column {
+-fx-alignment: CENTER;
+}
+
+.table-view2 .scroll-bar: horizontal{
+-fx-opacity: 0;
+-fx-padding: -7;
+}
+
+.table-view2 .scroll-bar: vertical{
+-fx-opacity: 0;
+-fx-padding: -7;
+}
+
+/*.table-view2 {
+-fx-border-color: gray;
+}*/

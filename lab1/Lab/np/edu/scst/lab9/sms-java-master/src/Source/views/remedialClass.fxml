@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="137.0" prefWidth="468.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Source.controllers.remedialClassController">
+    <children>
+        <VBox layoutX="88.0" layoutY="-41.0" prefHeight="179.0" prefWidth="468.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <Label fx:id="saveLabel" prefHeight="17.0" prefWidth="99.0" text="Saved" visible="false" />
+                <JFXTextField fx:id="classNameTextField" labelFloat="true" onKeyReleased="#whileTyping" promptText="Class name" />
+                <HBox prefHeight="38.0" prefWidth="468.0" spacing="10.0">
+                    <children>
+                        <Separator prefWidth="200.0" visible="false" HBox.hgrow="ALWAYS" />
+                        <JFXButton buttonType="RAISED" onAction="#onSave" prefHeight="25.0" prefWidth="79.0" ripplerFill="ROYALBLUE" text="Save" />
+                        <JFXButton buttonType="RAISED" onAction="#onClose" prefHeight="25.0" prefWidth="83.0" ripplerFill="#f28056" text="Close" />
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="328.0" prefWidth="410.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Source.controllers.changeLogInController">
+   <children>
+      <HBox layoutX="47.0" prefHeight="35.0" prefWidth="410.0" style="-fx-background-color: royalblue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="BOTTOM_LEFT" prefHeight="49.0" prefWidth="186.0" text="Change Log In" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Pane fx:id="snackBarPane" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <VBox layoutX="112.0" layoutY="42.0" prefHeight="201.0" prefWidth="410.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="42.0">
+         <children>
+            <JFXTextField fx:id="surnameTextField" labelFloat="true" layoutX="30.0" layoutY="30.0" onKeyReleased="#getSurname" prefHeight="40.0" promptText="Surname" />
+            <JFXTextField fx:id="other_nameTextField" labelFloat="true" layoutX="30.0" layoutY="180.0" onKeyReleased="#getOtherName" prefHeight="40.0" promptText="Other Names" />
+            <JFXTextField fx:id="emailTextField" labelFloat="true" onKeyReleased="#validateEmailWhileTyping" prefHeight="40.0" promptText="Email" />
+            <JFXPasswordField fx:id="passwordTextField" labelFloat="true" onKeyReleased="#getPassword1" promptText="Password" />
+            <JFXPasswordField fx:id="conPassTextField" labelFloat="true" layoutX="30.0" layoutY="210.0" onKeyReleased="#getPassword2" promptText="Confirm Password" />
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+      <JFXButton buttonType="RAISED" layoutX="323.0" layoutY="235.0" onAction="#onSave" prefHeight="31.0" prefWidth="75.0" style="-fx-background-color: royalblue;" text="Save" textFill="WHITE" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="12.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="15.0" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

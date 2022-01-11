@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="mainContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="709.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Source.controllers.regularStudentRegistrationController">
+   <children>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="608.0" prefWidth="709.0">
+         <children>
+            <Pane layoutX="-10.0" layoutY="-7.0" prefHeight="68.0" prefWidth="709.0" style="-fx-background-color: #3F51B5;" styleClass="product-detail-header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-7.0">
+               <children>
+                  <HBox layoutX="1.0" layoutY="30.0" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="709.0">
+                     <children>
+                        <Label prefHeight="33.0" prefWidth="73.0" text="Regular /" textFill="#e0e0e0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label text="New Student" textFill="#fafafa">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Pane fx:id="snackBarPane" prefHeight="30.0" prefWidth="219.0" HBox.hgrow="ALWAYS" />
+                        <Separator prefHeight="0.0" prefWidth="194.0" visible="false" />
+                        <JFXButton fx:id="saveButton" buttonType="RAISED" defaultButton="true" onAction="#onSaveBtnClicked" prefHeight="27.0" prefWidth="90.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Save" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </Pane>
+            <VBox layoutX="1.0" layoutY="61.0" prefHeight="156.0" prefWidth="709.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0">
+               <children>
+                  <HBox prefHeight="24.0" prefWidth="709.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="140.0" text="Student Details" textFill="#212121">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="30.0" prefWidth="133.0" text="Student Details" textFill="#616161">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Pane minHeight="-Infinity" prefHeight="1.0" prefWidth="672.0" style="-fx-background-color: #EEEEEE;">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <HBox prefHeight="33.0" prefWidth="709.0" spacing="10.0">
+                     <children>
+                        <JFXTextField fx:id="stud_surnameTextField" accessibleHelp="Auto" labelFloat="true" onAction="#getStudentSurnameWhileTyping" onKeyReleased="#getStudentSurnameWhileTyping" prefHeight="25.0" prefWidth="157.0" promptText="Surname *" HBox.hgrow="ALWAYS">
+                           <validators>
+                              <RequiredFieldValidator message="Input Required!" />
+                           </validators>
+                        </JFXTextField>
+                        <JFXTextField fx:id="stud_other_nameTextField" accessibleHelp="Auto" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#getStudentOtherNamesWhileTyping" onKeyReleased="#getStudentOtherNamesWhileTyping" prefHeight="25.0" prefWidth="218.0" promptText="Other names *" HBox.hgrow="ALWAYS">
+                           <validators>
+                              <RequiredFieldValidator message="Input Required!" />
+                           </validators>
+                        </JFXTextField>
+                        <JFXComboBox fx:id="sexCombo" labelFloat="true" onAction="#getStudentSexOnChange" prefHeight="25.0" prefWidth="100.0" promptText="Sex *" />
+                        <JFXDatePicker fx:id="dobDatePicker" defaultColor="#4059a9" editable="false" onAction="#getStudentDoBOnChange" promptText="Date of birth *" showWeekNumbers="true" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="34.0" prefWidth="709.0" spacing="30.0">
+                     <children>
+                        <JFXComboBox fx:id="nationalityCombo" labelFloat="true" onAction="#getStudentNationalityOnChange" prefHeight="25.0" prefWidth="114.0" promptText="Nationality" />
+                        <JFXTextField fx:id="stud_religionTextField" labelFloat="true" onAction="#getStudentReligion" onKeyReleased="#getStudentReligion" prefHeight="25.0" prefWidth="238.0" promptText="Religious Denomination" />
+                        <JFXTextField fx:id="stud_futureTextField" labelFloat="true" layoutX="134.0" layoutY="10.0" onAction="#getStudentFuture" onKeyReleased="#getStudentFuture" prefHeight="25.0" prefWidth="238.0" promptText="Aspiring Future Career" />
+                     </children>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="104.0" prefHeight="34.0" prefWidth="709.0" spacing="30.0">
+                     <children>
+                        <JFXTextField fx:id="stud_jhsTextField" labelFloat="true" onAction="#getStudentJHS" onKeyReleased="#getStudentJHS" prefHeight="25.0" prefWidth="238.0" promptText="J.H.S Attended *" HBox.hgrow="ALWAYS" />
+                        <JFXDatePicker fx:id="fromDatePicker" defaultColor="#4059a9" editable="false" onAction="#getStudentFromDate" promptText="From *" />
+                        <JFXDatePicker fx:id="toDatePicker" defaultColor="#4059a9" editable="false" layoutX="294.0" layoutY="10.0" onAction="#getStudentToDate" promptText="To *" />
+                        <JFXTextField fx:id="stud_beceTextField" labelFloat="true" layoutX="271.0" layoutY="10.0" onAction="#getStudentBECE" onKeyReleased="#getStudentBECE" prefHeight="25.0" prefWidth="149.0" promptText="B.E.C.E Aggregate *" />
+                     </children>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </VBox>
+            <VBox layoutY="245.0" prefHeight="92.0" prefWidth="709.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="245.0">
+               <children>
+                  <HBox prefHeight="26.0" prefWidth="709.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="154.0" text="Student Address" textFill="#212121">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="30.0" prefWidth="137.0" text="Student Address" textFill="#616161">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Pane prefHeight="1.0" prefWidth="672.0" style="-fx-background-color: #EEEEEE;" />
+                  <HBox prefHeight="41.0" prefWidth="709.0" spacing="20.0">
+                     <children>
+                        <HBox prefHeight="41.0" prefWidth="220.0" spacing="3.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <JFXComboBox fx:id="countryCodeCombo1" labelFloat="true" onAction="#getCode1" prefHeight="25.0" prefWidth="91.0" promptText="Code" HBox.hgrow="ALWAYS" />
+                              <JFXTextField fx:id="studentPhoneTextField" labelFloat="true" onAction="#validateStudentPhoneNumberWhileTyping" onKeyReleased="#validateStudentPhoneNumberWhileTyping" prefHeight="25.0" prefWidth="129.0" promptText="Phone Number *" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <JFXTextField fx:id="studentEmailTextField" labelFloat="true" onAction="#validateStudentEmailWileTyping" onKeyReleased="#validateStudentEmailWileTyping" prefHeight="25.0" prefWidth="210.0" promptText=" Email *" HBox.hgrow="ALWAYS" />
+                        <JFXTextField fx:id="stud_houseNo" labelFloat="true" promptText="House No." HBox.hgrow="ALWAYS" />
+                        <JFXTextField fx:id="stud_Location" labelFloat="true" promptText="Location" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutY="350.0" prefHeight="264.0" prefWidth="709.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="350.0">
+               <children>
+                  <HBox prefHeight="12.0" prefWidth="709.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="154.0" text="Guardian Details" textFill="#212121">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="33.0" prefWidth="117.0" text="Guardian Details" textFill="#616161">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="addFather" mnemonicParsing="false" onAction="#addFatherListener" prefHeight="30.0" prefWidth="88.0" text="Add Father">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="addMother" mnemonicParsing="false" onAction="#addMotherListener" prefHeight="30.0" prefWidth="93.0" text="Add Mother">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="addSponsor" mnemonicParsing="false" onAction="#addSponsorListener" prefHeight="30.0" prefWidth="103.0" text="Add Sponsor">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </CheckBox>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <Pane minHeight="-Infinity" prefHeight="1.0" prefWidth="709.0" style="-fx-background-color: #EEEEEE;">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Pane>
+                  <ScrollPane fx:id="scrollContainer" fitToWidth="true" prefHeight="229.0" prefWidth="709.0" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox maxWidth="1.7976931348623157E308" style="-fx-background-color: white;">
+                           <children>
+                              <VBox fx:id="fatherContainer" disable="true" prefHeight="107.0" prefWidth="709.0">
+                                 <children>
+                                    <Label prefHeight="19.0" prefWidth="101.0" style="-fx-background-color: royalblue;" text="Father's Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="37.0" prefWidth="709.0" spacing="10.0">
+                                       <children>
+                                          <JFXComboBox fx:id="titleCombo1" labelFloat="true" onAction="#getFatherTitle" prefHeight="25.0" prefWidth="110.0" promptText="Title" />
+                                          <JFXTextField fx:id="fatherSurnameTextField" labelFloat="true" onAction="#getFatherSurname" onKeyReleased="#getFatherSurname" promptText="Surname *" />
+                                          <JFXTextField fx:id="fatherOtherNameTextField" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#getFatherOtherName" onKeyReleased="#getFatherOtherName" promptText="Other names *" />
+                                          <JFXTextField fx:id="fatherOccupationTextField" labelFloat="true" onAction="#getFatherOccupation" prefHeight="25.0" prefWidth="147.0" promptText="Occupation" />
+                                          <JFXTextField fx:id="father_P_AddressTextField" labelFloat="true" layoutX="386.0" layoutY="10.0" onAction="#getFatherPostAddress" onKeyReleased="#getFatherPostAddress" prefHeight="25.0" prefWidth="147.0" promptText="Postal Address" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="29.0" prefHeight="35.0" prefWidth="709.0" spacing="10.0">
+                                       <children>
+                                          <HBox prefHeight="35.0" prefWidth="174.0" spacing="3.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <JFXComboBox fx:id="countryCodeCombo2" labelFloat="true" onAction="#getCode2" prefHeight="25.0" prefWidth="79.0" promptText="Code" HBox.hgrow="ALWAYS" />
+                                                <JFXTextField fx:id="fatherPhoneTextField" labelFloat="true" onAction="#validateFatherPhoneNumberWhileTyping" onKeyReleased="#validateFatherPhoneNumberWhileTyping" promptText="Phone Number *" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <JFXTextField fx:id="fatherEmailTextField" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#validateFatherEmailWileTyping" onKeyReleased="#validateFatherEmailWileTyping" promptText="Email *" HBox.hgrow="ALWAYS" />
+                                          <JFXTextField fx:id="father_R_AddressTextField" labelFloat="true" onAction="#getFatherResAddress" onKeyReleased="#getFatherResAddress" prefHeight="25.0" prefWidth="147.0" promptText="Residential Address" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="50.0" right="50.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="motherContainer" disable="true" prefHeight="107.0" prefWidth="709.0">
+                                 <children>
+                                    <Label prefHeight="19.0" prefWidth="103.0" style="-fx-background-color: royalblue;" text="Mother's Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="37.0" prefWidth="709.0" spacing="10.0">
+                                       <children>
+                                          <JFXComboBox fx:id="titleCombo2" labelFloat="true" onAction="#getMotherTitle" prefHeight="25.0" prefWidth="116.0" promptText="Title" />
+                                          <JFXTextField fx:id="motherSurnameTextField" labelFloat="true" onAction="#getMotherSurname" onKeyReleased="#getMotherSurname" promptText="Surname *" />
+                                          <JFXTextField fx:id="motherOtherNameTextField" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#getMotherOtherName" onKeyReleased="#getMotherOtherName" promptText="Other names *" />
+                                          <JFXTextField fx:id="motherOccupationTextField" labelFloat="true" onAction="#getMotherOccupation" onKeyReleased="#getMotherOccupation" prefHeight="25.0" prefWidth="147.0" promptText="Occupation" />
+                                          <JFXTextField fx:id="mother_P_AddressTextField" labelFloat="true" layoutX="386.0" layoutY="10.0" onAction="#getMotherPostAddress" onKeyReleased="#getMotherPostAddress" prefHeight="25.0" prefWidth="147.0" promptText="Postal Address" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="29.0" prefHeight="35.0" prefWidth="709.0" spacing="10.0">
+                                       <children>
+                                          <HBox prefHeight="35.0" prefWidth="174.0" spacing="3.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <JFXComboBox fx:id="countryCodeCombo3" labelFloat="true" onAction="#getCode3" prefHeight="25.0" prefWidth="77.0" promptText="Code" HBox.hgrow="ALWAYS" />
+                                                <JFXTextField fx:id="motherPhoneTextField" labelFloat="true" onAction="#validateMotherPhoneNumberWhileTyping" onKeyReleased="#validateMotherPhoneNumberWhileTyping" promptText="Phone Number *" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <JFXTextField fx:id="motherEmailTextField" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#validateMotherEmailWileTyping" onKeyReleased="#validateMotherEmailWileTyping" promptText="Email *" HBox.hgrow="ALWAYS" />
+                                          <JFXTextField fx:id="mother_R_AddressTextField" labelFloat="true" onAction="#getMotherResAddress" onKeyReleased="#getMotherResAddress" prefHeight="25.0" prefWidth="147.0" promptText="Residential Address" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="50.0" right="50.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox fx:id="sponsorContainer" disable="true" layoutX="10.0" layoutY="110.0" prefHeight="107.0" prefWidth="709.0">
+                                 <children>
+                                    <Label prefHeight="19.0" prefWidth="105.0" style="-fx-background-color: royalblue;" text="Sponsor's Details" textFill="WHITE">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="37.0" prefWidth="709.0" spacing="10.0">
+                                       <children>
+                                          <JFXComboBox fx:id="titleCombo3" labelFloat="true" onAction="#getSponsorTitle" prefHeight="25.0" prefWidth="122.0" promptText="Title" />
+                                          <JFXTextField fx:id="sponsorSurnameTextField" labelFloat="true" onAction="#getSponsorSurname" onKeyReleased="#getSponsorSurname" promptText="Surname *" />
+                                          <JFXTextField fx:id="sponsorOtherNameTextField" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#getSponsorOtherName" onKeyReleased="#getSponsorOtherName" promptText="Other names *" />
+                                          <JFXTextField fx:id="sponsorOccupationTextField" labelFloat="true" onAction="#getSponsorOccupation" onKeyReleased="#getSponsorOccupation" prefHeight="25.0" prefWidth="147.0" promptText="Occupation" />
+                                          <JFXTextField fx:id="sponsor_P_AddressTextField" labelFloat="true" layoutX="386.0" layoutY="10.0" onAction="#getSponsorPostAddress" onKeyReleased="#getSponsorPostAddress" prefHeight="25.0" prefWidth="147.0" promptText="Postal Address" />
+                                       </children>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="29.0" prefHeight="35.0" prefWidth="709.0" spacing="10.0">
+                                       <children>
+                                          <HBox prefHeight="35.0" prefWidth="174.0" spacing="3.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <JFXComboBox fx:id="countryCodeCombo4" labelFloat="true" onAction="#getCode4" prefHeight="25.0" prefWidth="90.0" promptText="Code" HBox.hgrow="ALWAYS" />
+                                                <JFXTextField fx:id="sponsorPhoneTextField" labelFloat="true" onAction="#validateSponsorPhoneNumberWhileTyping" onKeyReleased="#validateSponsorPhoneNumberWhileTyping" promptText="Phone Number *" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <JFXTextField fx:id="sponsorEmailTextField" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#validateSponsorEmailWileTyping" onKeyReleased="#validateSponsorEmailWileTyping" promptText="Email *" HBox.hgrow="ALWAYS" />
+                                          <JFXTextField fx:id="sponsor_R_AddressTextField" labelFloat="true" onAction="#getSponsorResAddress" onKeyReleased="#getSponsorResAddress" prefHeight="25.0" prefWidth="147.0" promptText="Residential Address" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="50.0" right="50.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <VBox layoutX="233.0" layoutY="621.0" prefHeight="79.0" prefWidth="709.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="621.0">
+               <children>
+                  <HBox prefHeight="32.0" prefWidth="699.0">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="165.0" text="Admission Details" textFill="#212121">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="32.0" prefWidth="137.0" text="Admission Details" textFill="#616161">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Pane prefHeight="1.0" prefWidth="672.0" style="-fx-background-color: #EEEEEE;" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <JFXDatePicker fx:id="adDatePicker" defaultColor="#4059a9" editable="false" onAction="#getAdmissionDate" promptText="Admission Date *" />
+                        <JFXDatePicker fx:id="comDatePicker" defaultColor="#4059a9" editable="false" layoutX="10.0" layoutY="10.0" onAction="#getCompletionDate" promptText="Date of Completion *" />
+                        <JFXComboBox fx:id="residentialStatus" labelFloat="true" onAction="#getResidentialStatus" prefHeight="25.0" prefWidth="120.0" promptText="Residential Status *" HBox.hgrow="ALWAYS" />
+                        <JFXComboBox fx:id="programmesCombo" labelFloat="true" onAction="#getStudentProgramme" prefHeight="25.0" prefWidth="142.0" promptText="Programme Offered *" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

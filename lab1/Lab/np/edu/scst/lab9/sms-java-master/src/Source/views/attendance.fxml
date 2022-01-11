@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="709.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Source.controllers.attendanceController">
+   <children>
+      <HBox layoutX="155.0" layoutY="6.0" prefHeight="61.0" prefWidth="200.0" style="-fx-background-color: royalblue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="BOTTOM_LEFT" prefHeight="62.0" prefWidth="141.0" text="Attendance" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="menuBox" layoutX="155.0" layoutY="127.0" prefHeight="633.0" prefWidth="709.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <Separator fx:id="leftSeparator" prefHeight="0.0" prefWidth="32.0" visible="false" HBox.hgrow="ALWAYS" />
+            <VBox fx:id="clubMenuBox" prefHeight="635.0" prefWidth="288.0" spacing="15.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#onPrintClubAttendance" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Print Attendance Sheet" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="50.0" onAction="#onClubDataEntry" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Data Entry" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="148.0" onAction="#onClubSendSMS" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Send SMS" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="104.0" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="View Attendance" textFill="WHITE" visible="false" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="197.0" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Send Email" textFill="WHITE" visible="false" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets top="40.0" />
+               </padding>
+            </VBox>
+            <Separator fx:id="middleSeparator" prefHeight="0.0" prefWidth="57.0" visible="false" HBox.hgrow="ALWAYS" />
+            <VBox fx:id="remedialMenuBox" layoutX="10.0" layoutY="10.0" prefHeight="635.0" prefWidth="288.0" spacing="15.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#onPrintAttendanceSheet" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Print Attendance Sheet" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="50.0" onAction="#onRemedialDateEntry" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Data Entry" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="148.0" onAction="#onRemedialSendSMS" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Send SMS" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="104.0" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="View Attendance" textFill="WHITE" visible="false" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="197.0" prefHeight="34.0" prefWidth="288.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688;" text="Send Email" textFill="WHITE" visible="false" />
+               </children>
+               <padding>
+                  <Insets top="40.0" />
+               </padding>
+            </VBox>
+            <Separator fx:id="rightSeparator" layoutX="10.0" layoutY="10.0" prefHeight="1.0" prefWidth="57.0" visible="false" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

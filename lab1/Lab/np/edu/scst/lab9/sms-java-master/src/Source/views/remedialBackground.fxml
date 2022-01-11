@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.StackPane?>
+<StackPane fx:controller="Source.controllers.remedialBackgroundController"  xmlns:fx="http://javafx.com/fxml/1" fx:id="masterContainer">
+<AnchorPane  maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="709.0" style="-fx-background-color: white;" >
+   <children>
+      <JFXListView fx:id="studentJFXListView" layoutX="11.0" layoutY="74.0" onMouseClicked="#onStudentSelected" prefHeight="617.0" prefWidth="258.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="74.0" />
+      <HBox layoutX="155.0" prefHeight="68.0" prefWidth="709.0" style="-fx-background-color: royalblue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="BOTTOM_LEFT" prefHeight="61.0" prefWidth="80.0" text="Remedial /" textFill="#e0e0e0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="BOTTOM_LEFT" prefHeight="63.0" prefWidth="219.0" text="Educational Background" textFill="#fafafa">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Pane fx:id="snackBarPane" prefHeight="68.0" prefWidth="244.0" />
+            <JFXButton fx:id="saveBtn" defaultButton="true" onAction="#onSaveBtnClicked" prefHeight="25.0" prefWidth="85.0" ripplerFill="#4db6ac" style="-fx-background-color: #009688; -fx-background-radius: 6;" text="Save" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="35.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <VBox fx:id="allContainer" layoutX="276.0" layoutY="74.0" prefHeight="617.0" prefWidth="425.0" spacing="10.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="74.0">
+         <children>
+            <VBox prefHeight="117.0" prefWidth="425.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="587.0" text="EDUCATIONAL BACKGROUND">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <HBox prefHeight="40.0" prefWidth="425.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="nameOfSchoolTextField" labelFloat="true" onAction="#getSchoolName" onKeyReleased="#getSchoolName" promptText="Name of School *" HBox.hgrow="ALWAYS" />
+                        <JFXTextField fx:id="addressTextField" labelFloat="true" layoutX="10.0" layoutY="10.0" onAction="#getAddress" onKeyReleased="#getAddress" promptText="Address" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="30.0" prefWidth="425.0" spacing="20.0">
+                     <children>
+                        <JFXComboBox fx:id="completedYearCombo" labelFloat="true" onAction="#getCompletedYear" prefHeight="25.0" prefWidth="151.0" promptText="Year Completed *" HBox.hgrow="ALWAYS" />
+                        <HBox fx:id="autoCompleteContainer" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="298.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label prefHeight="20.0" prefWidth="267.0" text="Examination History">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="27.0" prefWidth="425.0">
+               <children>
+                  <CheckBox fx:id="firstCheck" mnemonicParsing="false" onAction="#onAddOneCheck" prefHeight="28.0" prefWidth="89.0" text="1st Attempt" />
+                  <Separator prefWidth="200.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="addBtn1" contentDisplay="GRAPHIC_ONLY" disable="true" onAction="#onAddFirstAttempt">
+                     <graphic>
+                        <MaterialDesignIconView fill="ROYALBLUE" glyphName="PLUS_BOX" size="20" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXTextField fx:id="school1TextField" disable="true" labelFloat="true" onAction="#getSchoolOne" onKeyReleased="#getSchoolOne" promptText="Name of School *" />
+            <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <VBox fx:id="firstAttemptGroup" disable="true" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </padding></VBox>
+               </content>
+            </ScrollPane>
+            <HBox layoutX="10.0" layoutY="163.0" prefHeight="27.0" prefWidth="425.0">
+               <children>
+                  <CheckBox fx:id="secondCheck" mnemonicParsing="false" onAction="#onAddTwoCheck" prefHeight="31.0" prefWidth="89.0" text="2nd Attempt" />
+                  <Separator prefWidth="200.0" visible="false" HBox.hgrow="ALWAYS" />
+                  <JFXButton fx:id="addBtn2" contentDisplay="GRAPHIC_ONLY" disable="true" onAction="#onAddSecondAttempt">
+                     <graphic>
+                        <MaterialDesignIconView fill="ROYALBLUE" glyphName="PLUS_BOX" size="20" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <JFXTextField fx:id="school2TextField" disable="true" labelFloat="true" onAction="#getSchoolTwo" onKeyReleased="#getSchoolTwo" promptText="Name of School *" />
+            <ScrollPane fitToWidth="true" layoutX="10.0" layoutY="187.0" prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <VBox fx:id="secondAttemptGroup" disable="true" prefHeight="200.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </padding></VBox>
+               </content></ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
+</StackPane>

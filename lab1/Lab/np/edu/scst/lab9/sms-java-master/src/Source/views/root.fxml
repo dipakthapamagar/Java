@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Source.controllers.rootController">
+    <children>
+        <Pane layoutX="-7.0" layoutY="-8.0" prefHeight="706.0" prefWidth="140.0" style="-fx-background-color: mediumblue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <JFXButton fx:id="studBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" defaultButton="true" layoutX="-3.0" layoutY="136.0" onAction="#onStudentClicked" prefHeight="95.0" prefWidth="140.0" ripplerFill="#7986cb" text="Student Management" textAlignment="CENTER" textFill="#fffdfd">
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/persons.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="finBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="-3.0" layoutY="234.0" prefHeight="95.0" prefWidth="140.0" ripplerFill="#7986cb" text="Financial Management" textAlignment="CENTER" textFill="#fffdfd">
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/inventory.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="qualBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="4.0" layoutY="331.0" prefHeight="95.0" prefWidth="131.0" ripplerFill="#7986cb" text="Quality Control" textAlignment="CENTER" textFill="#fffdfd">
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/sale.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="reportBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="4.0" layoutY="424.0" prefHeight="95.0" prefWidth="131.0" ripplerFill="#7986cb" text="Report Delivery" textAlignment="CENTER" textFill="#fffdfd">
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/dashboard.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <Pane layoutX="9.0" layoutY="634.0" prefHeight="1.0" prefWidth="123.0" style="-fx-background-color: #303F9F;" />
+                <JFXButton fx:id="aboutBtn" alignment="BOTTOM_CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="4.0" layoutY="649.0" onAction="#onHelpClicked" prefHeight="35.0" prefWidth="45.0" ripplerFill="#7986cb" textAlignment="CENTER" textFill="#fffdfd">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/help.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="settingsBtn" alignment="BOTTOM_CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="48.0" layoutY="649.0" onAction="#onSettingsClicked" prefHeight="35.0" prefWidth="45.0" ripplerFill="#7986cb" textAlignment="CENTER" textFill="#fffdfd">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/settings.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="logOutBtn" alignment="BOTTOM_CENTER" cancelButton="true" contentDisplay="GRAPHIC_ONLY" layoutX="90.0" layoutY="649.0" onAction="#onLogOut" prefHeight="35.0" prefWidth="45.0" ripplerFill="#7986cb" textAlignment="CENTER" textFill="#fffdfd">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/exit.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="attendBtn" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="4.0" layoutY="519.0" onAction="#onAttendanceClicked" prefHeight="95.0" prefWidth="131.0" ripplerFill="#7986cb" text="Attendance" textAlignment="CENTER" textFill="#fffdfd">
+                    <graphic>
+                        <ImageView fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/report.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <ImageView fitHeight="116.0" fitWidth="131.0" layoutX="9.0" layoutY="6.0" opacity="0.91" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/presetLOGO.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <AnchorPane layoutX="140.0" prefHeight="689.0" prefWidth="702.0" style="-fx-background-color: #FFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="globalContainer" layoutY="26.0" prefHeight="335.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+    </children>
+</AnchorPane>
